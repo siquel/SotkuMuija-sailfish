@@ -29,13 +29,14 @@
 */
 
 import QtQuick 2.0
+import QtQuick.XmlListModel 2.0
 import Sailfish.Silica 1.0
 
 
 Page {
     id: page
 
-    property string dataURL: "http://www.leijonacatering.fi/ruokalista_varuskunta_seur.php"
+    property string dataURL: "https://dl.dropboxusercontent.com/u/22171160/food.xml"
 
     SilicaFlickable {
 
@@ -56,29 +57,52 @@ Page {
             }
         }
 
-    /*    XmlListModel {
-            id: model
+       XmlListModel {
+            id: foodModel
             source: page.dataURL
-            query: "/html/body/table/tbody"+filter
+            query: "/week/day"
 
             XmlRole {
-                name: "vittu"
-                query: "tr[2]/td[2]"
-            }
-        }*/
-
-        Column {
-            id: column
-
-            width: page.width
-            spacing: Theme.paddingLarge
-
-            PageHeader {
-                title: "Leijona Catering"
+                name: "breakfast"
+                query: "breakfast/string()"
             }
 
-
+            onStatusChanged: {
+                if (status == XmlListModel.Error) {
+                    console.log("ERROR! " + errorString())
+                } else if (status == XmlListModel.Ready) {
+                    console.log("JEEE!")
+                }
+            }
         }
+
+       SilicaListView {
+           id: foodView
+           width: ( parent.width - ( 2.0 * Theme.paddingLarge ))
+           height: parent.height
+           anchors.centerIn: parent
+
+           header: PageHeader {
+               title: "Leijona vittu"
+           }
+
+           model: foodModel
+
+           // miltä tulis näyttää
+           delegate: Item {
+               height: labelType.height + 20
+                visible: true
+
+                Label {
+                    id: labelType
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    font.bold: false
+                    text: model.breakfast
+                    color: Theme.secondaryColor
+                }
+
+           }
+       }
     }
 }
 

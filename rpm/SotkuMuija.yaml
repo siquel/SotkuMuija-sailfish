@@ -18,6 +18,7 @@ PkgConfigBR:
 - Qt5Quick
 Requires:
 - sailfishsilica-qt5 >= 0.10.9
+- qt5-qtdeclarative-import-xmllistmodel
 Files:
 - /usr/share/icons/hicolor/86x86/apps
 - /usr/share/applications
@@ -27,3 +28,4 @@ Files:
 - '%{_datadir}/applications/%{name}.desktop'
 - '%{_datadir}/%{name}/qml'
 - '%{_bindir}'
+PkgBR: []

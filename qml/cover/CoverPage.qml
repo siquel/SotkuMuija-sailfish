@@ -37,7 +37,7 @@ CoverBackground {
         anchors.centerIn: parent
         text: "TJ"
         RotationAnimation on rotation {
-            running: active
+            running: true
             duration: 1000
             loops: Animation.Infinite
             from: 0; to: 360

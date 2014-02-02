@@ -68,8 +68,7 @@ Page {
             }
             Label {
                 x: Theme.paddingLarge
-               // text: "TJ 138"
-                text: QUrl()
+                text: "TJ 138"
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
