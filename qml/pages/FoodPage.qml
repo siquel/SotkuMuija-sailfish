@@ -38,6 +38,8 @@ Page {
 
     property string dataURL: "https://dl.dropboxusercontent.com/u/22171160/food.xml"
 
+    property string filter: "[@name='1']"
+
     SilicaFlickable {
 
         anchors.fill: parent
@@ -60,12 +62,16 @@ Page {
        XmlListModel {
             id: foodModel
             source: page.dataURL
-            query: "/week/day"
+            query: "/week/day"+filter
 
             XmlRole {
                 name: "breakfast"
                 query: "breakfast/string()"
             }
+
+            XmlRole { name: "supper"; query: "supper/string()" }
+            XmlRole { name: "dinner"; query: "dinner/string()" }
+            XmlRole { name: "lunch"; query: "lunch/string()" }
 
             onStatusChanged: {
                 if (status == XmlListModel.Error) {
