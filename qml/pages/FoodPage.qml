@@ -46,16 +46,8 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "Aamupala"
-            }
-            MenuItem {
-                text: "Lounas"
-            }
-            MenuItem {
-                text: "Päivällinen"
-            }
-            MenuItem {
-                text: "Iltapala"
+                text: "Asetukset"
+                onClicked: pageStack.push(Qt.resolvedUrl("FoodSettings.qml"))
             }
         }
 

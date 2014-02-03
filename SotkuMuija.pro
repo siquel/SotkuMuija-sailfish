@@ -18,5 +18,6 @@ OTHER_FILES += qml/SotkuMuija.qml \
     rpm/SotkuMuija.yaml \
     SotkuMuija.desktop \
     qml/pages/TjPage.qml \
-    qml/pages/FoodPage.qml
+    qml/pages/FoodPage.qml \
+    qml/pages/FoodSettings.qml
 
