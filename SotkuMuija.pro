@@ -10,7 +10,10 @@ TARGET = SotkuMuija
 
 CONFIG += sailfishapp
 
-SOURCES += src/SotkuMuija.cpp
+SOURCES += src/SotkuMuija.cpp \
+    src/qfoodcalendar.cpp \
+    src/qtimespan.cpp \
+    src/tjcalculatorbackend.cpp
 
 OTHER_FILES += qml/SotkuMuija.qml \
     qml/cover/CoverPage.qml \
@@ -19,5 +22,11 @@ OTHER_FILES += qml/SotkuMuija.qml \
     SotkuMuija.desktop \
     qml/pages/TjPage.qml \
     qml/pages/FoodPage.qml \
-    qml/pages/FoodSettings.qml
+    qml/pages/FoodSettings.qml \
+    config.json
+
+HEADERS += \
+    src/qfoodcalendar.h \
+    src/qtimespan.h \
+    src/tjcalculatorbackend.h
 

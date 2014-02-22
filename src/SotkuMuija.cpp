@@ -33,6 +33,7 @@
 #endif
 
 #include <sailfishapp.h>
+#include "tjcalculatorbackend.h"
 
 
 int main(int argc, char *argv[])
@@ -45,7 +46,14 @@ int main(int argc, char *argv[])
     //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
     //
     // To display the view, call "show()" (will show fullscreen on device).
+    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
 
-    return SailfishApp::main(argc, argv);
+    QScopedPointer<QQuickView> view(SailfishApp::createView());
+    QScopedPointer<TjCalculatorBackend> backend(new TjCalculatorBackend);
+
+    view->rootContext()->setContextProperty("backend", backend.data());
+    view->setSource(SailfishApp::pathTo("qml/SotkuMuija.qml"));
+    view->show();
+    return app->exec();
 }
 

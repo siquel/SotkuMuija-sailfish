@@ -64,6 +64,7 @@ Page {
             XmlRole { name: "supper"; query: "supper/string()" }
             XmlRole { name: "dinner"; query: "dinner/string()" }
             XmlRole { name: "lunch"; query: "lunch/string()" }
+            XmlRole { name: "name"; query: "@name/string()" }
 
             onStatusChanged: {
                 if (status == XmlListModel.Error) {
@@ -76,7 +77,7 @@ Page {
 
        SilicaListView {
            id: foodView
-           width: ( parent.width - ( 2.0 * Theme.paddingLarge ))
+           width: parent.width
            height: parent.height
            anchors.centerIn: parent
 
@@ -93,10 +94,17 @@ Page {
 
                 Label {
                     id: labelType
-                    font.pixelSize: Theme.fontSizeExtraSmall
+                    font.pixelSize: Theme.fontSizeSmall
                     font.bold: false
                     text: model.breakfast
+
                     color: Theme.secondaryColor
+                }
+
+                Label {
+                    id: foodType
+
+
                 }
 
            }

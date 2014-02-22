@@ -12,7 +12,7 @@ Name:       SotkuMuija
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    My SailfishOS Application
+Summary:    TJ laskuri 1/14 saapumiserälle
 Version:    0.1
 Release:    1
 Group:      Qt/Qt
@@ -29,8 +29,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
-
+TJ laskuri 1/14 saapumiserälle joka osaa myös näyttää ruuan
 
 %prep
 %setup -q -n %{name}-%{version}

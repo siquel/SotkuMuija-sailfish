@@ -32,15 +32,85 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
-    Label {
-        id: label
-        anchors.centerIn: parent
-        text: "TJ"
-        RotationAnimation on rotation {
-            running: true
-            duration: 1000
-            loops: Animation.Infinite
-            from: 0; to: 360
+    id: cover
+
+    Column {
+        width: cover.width
+        spacing: Theme.paddingSmall
+        y: Theme.paddingLarge
+
+        Label {
+            id: tj
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "TJ"
+            color: Theme.primaryColor
+            font.family: Theme.fontFamilyHeading
+        }
+
+        Label {
+            id: days
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: backend.tjInDays
+            color: Theme.primaryColor
+        }
+
+        Separator {
+            x: Theme.paddingLarge
+            width: parent.width - Theme.paddingLarge * 2
+            horizontalAlignment: Qt.AlignCenter
+            color: Theme.highlightColor
+        }
+
+        Row {
+            width: parent.width - Theme.paddingLarge * 2
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 15
+
+            Label {
+                id: lomaTj
+                anchors.horizontalCenter: Qt.AlignRight
+                text: "Loma TJ"
+                color: Theme.primaryColor
+                font.family: Theme.fontFamilyHeading
+                width: 3 * parent.width / 4
+            }
+
+            Label {
+                id: lomaDays
+                horizontalAlignment: Qt.AlignLeft
+                width: parent.width / 4
+                text: "7"
+                color: Theme.primaryColor
+                font.family: Theme.fontFamilyHeading
+            }
+        }
+
+
+
+
+
+        Separator {
+            x: Theme.paddingLarge
+            width: parent.width - Theme.paddingLarge * 2
+            horizontalAlignment: Qt.AlignCenter
+            color: Theme.highlightColor
+        }
+
+        Label {
+            id: foodType
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "Iltapala"
+            color: Theme.primaryColor
+            font.family: Theme.fontFamilyHeading
+        }
+        Label {
+            id: foodName
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "Paskaa pakista w/ ripuli"
+            color: Theme.primaryColor
+            wrapMode: Text.Wrap
+            width: parent.width - Theme.paddingMedium * 2
+            font.pixelSize: Theme.fontSizeSmall
         }
     }
 }

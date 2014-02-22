@@ -1,5 +1,5 @@
 Name: SotkuMuija
-Summary: My SailfishOS Application
+Summary: "TJ laskuri 1/14 saapumiser\xE4lle"
 Version: 0.1
 Release: 1
 Group: Qt/Qt
@@ -7,8 +7,8 @@ URL: http://example.org/
 License: LICENSE
 Sources:
 - '%{name}-%{version}.tar.bz2'
-Description: |
-  Short description of my SailfishOS Application
+Description: "TJ laskuri 1/14 saapumiser\xE4lle joka osaa my\xF6s n\xE4ytt\xE4\xE4
+  ruuan"
 Configure: none
 Builder: qtc5
 PkgConfigBR:

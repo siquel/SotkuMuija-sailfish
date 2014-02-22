@@ -64,15 +64,39 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: "Tänään jäljellä"
+                title: "Paskaa jäljellä"
             }
             Label {
                 x: Theme.paddingLarge
-                text: "TJ 138"
+                text: backend.tjInDays
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
 
+            ProgressBar {
+                minimumValue: 0
+                maximumValue: 100
+                id: tjbar
+                //x: Theme.paddingLarge
+                valueText: value.toFixed(2) + "%"
+                value: backend.daysDone
+                width: page.width
+            }
+
+            Label {
+                x: Theme.paddingLarge
+                text: backend.tjInMonths
+                color: Theme.secondaryHighlightColor
+                font.pixelSize: Theme.fontSizeExtraLarge
+            }
+
+            Label {
+                x: Theme.paddingLarge
+                text: backend.tjInWeeks
+                color: Theme.secondaryHighlightColor
+                font.pixelSize: Theme.fontSizeExtraLarge
+            }
+/*
             ProgressBar {
                 anchors.topMargin: Theme.paddingLarge
                 minimumValue: 0
@@ -83,7 +107,7 @@ Page {
                 height: 30
                 enabled: true
                 valueText: value + "%"
-            }
+            }*/
         }
     }
 }
